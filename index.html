@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head><link rel="stylesheet" href="normalize.css">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.rawgit.com/jgthms/minireset.css/master/minireset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900">
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	</head>
+	<body>
+
+		<div id="app" :style="gradient(active)">
+			<!-- v-for runs a for loop on the object, which will add a click event to the switch that will activate. Also passing props through. The element swatch is created by the Vue.component. Adding a : before an item tells it that this information is pulled from the instance. -->
+			<swatch
+				v-for="swatch in swatches"
+				@click.native="activate(swatch)"
+				:active="active" :swatch="swatch" :effect="gradient"
+			></swatch>
+		</div>
+
+		<script src="./index.js"></script>
+
+	</body>
+</html>
